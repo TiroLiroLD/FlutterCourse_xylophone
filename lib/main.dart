@@ -25,7 +25,7 @@ class XylophoneApp extends StatelessWidget {
     );
   }
 
-  Widget buildKey({@required int keyNumber, @required Color keyColor}) {
+  Expanded buildKey({@required int keyNumber, @required Color keyColor}) {
     return Expanded(
       child: Container(
         width: double.infinity,

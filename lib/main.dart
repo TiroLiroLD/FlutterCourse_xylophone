@@ -11,85 +11,29 @@ class XylophoneApp extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  color: Colors.red,
-                  child: TextButton(
-                    onPressed: () {
-                      play(1);
-                    },
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  color: Colors.orange,
-                  child: TextButton(
-                    onPressed: () {
-                      play(2);
-                    },
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  color: Colors.yellow,
-                  child: TextButton(
-                    onPressed: () {
-                      play(3);
-                    },
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  color: Colors.green,
-                  child: TextButton(
-                    onPressed: () {
-                      play(4);
-                    },
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  color: Colors.blue,
-                  child: TextButton(
-                    onPressed: () {
-                      play(5);
-                    },
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  color: Colors.indigo,
-                  child: TextButton(
-                    onPressed: () {
-                      play(6);
-                    },
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  color: Colors.purple,
-                  child: TextButton(
-                    onPressed: () {
-                      play(7);
-                    },
-                  ),
-                ),
-              ),
+              buildKey(keyNumber: 1, keyColor: Colors.red),
+              buildKey(keyNumber: 2, keyColor: Colors.orange),
+              buildKey(keyNumber: 3, keyColor: Colors.yellow),
+              buildKey(keyNumber: 4, keyColor: Colors.green),
+              buildKey(keyNumber: 5, keyColor: Colors.blue),
+              buildKey(keyNumber: 6, keyColor: Colors.indigo),
+              buildKey(keyNumber: 7, keyColor: Colors.purple),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildKey({@required int keyNumber, @required Color keyColor}) {
+    return Expanded(
+      child: Container(
+        width: double.infinity,
+        color: keyColor,
+        child: TextButton(
+          onPressed: () {
+            play(keyNumber);
+          },
         ),
       ),
     );
